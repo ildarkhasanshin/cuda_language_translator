@@ -15,6 +15,10 @@ From PyPI.org, download these libraries:
 Then unpack folder "bs4" (it has the file __init__.py) to (CudaText)\py.
 2) https://pypi.org/project/googletrans/
 Then unpack folder "googletrans" (it has the file __init__.py) to (CudaText)\py.
+3) https://pypi.org/project/httpx/
+Then unpack folder "httpx" (it has the file __init__.py) to (CudaText)\py.
+4) https://pypi.org/project/httpx-curl-cffi/
+Then unpack folder "httpx-curl-cffi" (it has the file __init__.py) to (CudaText)\py.
 
 
 Author: ildar r. khasanshin (github.com/ildarkhasanshin)
