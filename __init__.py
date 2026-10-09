@@ -44,7 +44,7 @@ if install_first:
 
 class Command:
     def __init__(self):
-        self.conf_file = Path(app_path(APP_DIR_SETTINGS)) / 'cuda_deep_translator.json'
+        self.conf_file = Path(app_path(APP_DIR_SETTINGS)) / 'cuda_language_translator.json'
         self.translator = Translator(
             service_urls=["translate.googleapis.com"],
             raise_exception=True,
@@ -144,7 +144,7 @@ class Command:
     def config(self):
         if self.conf_file.exists() == False:
             with self.conf_file.open(mode='w', encoding='utf-8') as f:
-                json.dump({'automatic copy to clipboard': 0, 'target_language': 'en'}, f, indent=2)
+                json.dump({'automatic copy to clipboard': 0}, f, indent=2)
         file_open(str(self.conf_file))
 
     def check_option(self, option):
