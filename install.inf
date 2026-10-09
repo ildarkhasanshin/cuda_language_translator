@@ -1,31 +1,31 @@
 [info]
-title=Deep Translator
-desc=Translation of texts through the Deep Translator (https://pypi.org/project/deep-translator/)
+title=Language Translator
+desc=Translation of texts through the Googletrans (https://pypi.org/project/googletrans/)
 type=cudatext-plugin
-subdir=cuda_deep_translator
-homepage=https://github.com/ildarkhasanshin/cuda_deep_translator
+subdir=cuda_language_translator
+homepage=https://github.com/ildarkhasanshin/cuda_language_translator
 
 [item1]
 section=commands
-caption=Deep Translator\Show translation in\New tab
+caption=Language Translator\Show translation in\New tab
 method=res2tab
 
 [item2]
 section=commands
-caption=Deep Translator\Show translation in\Message-box
+caption=Language Translator\Show translation in\Message-box
 method=res2msgbox
 
 [item3]
 section=commands
-caption=Deep Translator\Show translation in\Clipboard
+caption=Language Translator\Show translation in\Clipboard
 method=res2clipboard
 
 [item4]
 section=commands
-caption=Deep Translator\Show translation in\Status-bar
+caption=Language Translator\Show translation in\Status-bar
 method=res2statusbar
 
 [item5]
 section=commands
-caption=Deep Translator\Show config
+caption=Language Translator\Show config
 method=config

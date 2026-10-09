@@ -1,3 +1,3 @@
-# cuda_deep_translator
+# cuda_language_translator
 
-Translation of texts through the deep-translator (https://pypi.org/project/deep-translator/)
+Translation of texts through the Googletrans (https://pypi.org/project/googletrans/)
