@@ -174,21 +174,29 @@ class Command:
             lang1__ = {}
             for lang1_ in lang1:
                 key = lang1_.strip()
-                val = self.languages[lang1_.strip()]
-                lang1__[key] = val
+                if key in self.languages:
+                    lang1__[key] = self.languages[key]
+            # sort recent languages by name
+            lang1_items = sorted(lang1__.items(), key=lambda x: x[1].lower())
+            lang1__ = dict(lang1_items)
             #
-            lang2 = self.languages
             lang2__ = {}
-            for code, name in lang2.items():
-                if not code in lang1__:
+            for code, name in self.languages.items():
+                if code not in lang1__:
                     lang2__[code] = name
-            langs = '\n' . join([f"{code}: {name}" for code, name in lang1__.items()]) + '\n--\n'
-            langs += '\n' . join([f"{code}: {name}" for code, name in lang2__.items()])
+            # sort remaining languages by name
+            lang2_items = sorted(lang2__.items(), key=lambda x: x[1].lower())
+            lang2__ = dict(lang2_items)
             #
-            langs_ = lang1__ | {'--': '--'} | lang2__
+            langs = '\n'.join([f"{code}: {name}" for code, name in lang1__.items()]) + '\n--\n'
+            langs += '\n'.join([f"{code}: {name}" for code, name in lang2__.items()])
+            #
+            langs_ = {**lang1__, '--': '--', **lang2__}
         else:
-            langs = '\n' . join([f"{code}: {name}" for code, name in self.languages.items()])
-            langs_ = self.languages
+            # sort all languages by name
+            sorted_items = sorted(self.languages.items(), key=lambda x: x[1].lower())
+            langs_ = dict(sorted_items)
+            langs = '\n'.join([f"{code}: {name}" for code, name in langs_.items()])
         res = dlg_menu(DMENU_LIST, langs, 0, _('Select target language'))
         if res is not None:
             self.save_option('languages', list(langs_.keys())[res])
