@@ -1,3 +1,6 @@
+2026.10.16
+* adapted to python 3.8: thx @badrelmers
+
 2026.10.15
 + frequently used languages are now saved at the top of the list
 
